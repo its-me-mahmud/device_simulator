@@ -16,34 +16,35 @@ To learn more about designing for multiple resolutions, check out the [Medium ar
 
 It's really easy to add DeviceSimulator to your app. Simply add it to the root of your widget tree, right under your App widget. Build the rest of the widget tree as you would normally do. This is a minimal example:
 
-    import 'package:flutter/material.dart';
-    import 'package:device_simulator/device_simulator.dart';
-    
-    const bool debugEnableDeviceSimulator = true;
-    
-    void main() => runApp(MyApp());
-    
-    class MyApp extends StatelessWidget {
-      @override
-      Widget build(BuildContext context) {
-        return MaterialApp(
-          title: 'DeviceSimulator demo',
-          home: DeviceSimulator(
-            brightness: Brightness.dark,
-            enable: debugEnableDeviceSimulator,
-            child: Scaffold(
-              appBar: AppBar(
-                title: Text('DeviceSimulator Demo'),
-              ),
-              body: Center(
-                child: Text('Hello multiple resolutions!'),
-              ),
-            ),
+```dart
+import 'package:flutter/material.dart';
+import 'package:device_simulator/device_simulator.dart';
+
+const bool debugEnableDeviceSimulator = true;
+
+void main() => runApp(MyApp());
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'DeviceSimulator demo',
+      home: DeviceSimulator(
+        brightness: Brightness.dark,
+        enable: debugEnableDeviceSimulator,
+        child: Scaffold(
+          appBar: AppBar(
+            title: Text('DeviceSimulator Demo'),
           ),
-        );
-      }
-    }
- 
+          body: Center(
+            child: Text('Hello multiple resolutions!'),
+          ),
+        ),
+      ),
+    );
+  }
+}
+```
 
 ### Known issues & limitations
 
